@@ -8,141 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
-<style>
-  /* Mise en page : une colonne de lecture étroite, comme une page de CV prolongée ; noir et blanc, filets fins. */
-  :root {
-    --bg: #fbfbfa;
-    --fg: #1d1d1c;
-    --muted: #5d5d5a;
-    --line: #d9d8d4;
-    --chip: #efeeeb;
-    --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #151514; --fg: #ececea; --muted: #a3a29e; --line: #353533; --chip: #242422;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #151514; --fg: #ececea; --muted: #a3a29e; --line: #353533; --chip: #242422;
-    color-scheme: dark;
-  }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .wrap {
-    max-width: 52rem;
-    margin: 0 auto;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-    padding-block: 3.5rem 3rem;
-    display: grid;
-    gap: 3rem;
-  }
-  a { color: inherit; text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
-
-  /* En-tête */
-  .hero { display: grid; gap: 0.9rem; border-bottom: 2px solid var(--fg); padding-bottom: 2rem; }
-  .hero h1 {
-    margin: 0;
-    font-size: clamp(2.2rem, 7vw, 3.4rem);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    line-height: 1.05;
-    text-wrap: balance;
-  }
-  .hero h1 strong { font-weight: 700; }
-  .hero .statut { margin: 0; color: var(--muted); }
-  .hero .objectif { margin: 0; font-size: 1.1rem; max-width: 40rem; }
-  .facts {
-    display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem;
-    margin: 0.4rem 0 0; padding: 0; list-style: none;
-    font-size: 0.92rem; color: var(--muted);
-  }
-  .facts li strong { color: var(--fg); font-weight: 600; }
-
-  /* Sections */
-  section { display: grid; gap: 1.2rem; }
-  h2 {
-    margin: 0;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--line);
-  }
-  h3 {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  p { margin: 0; max-width: 42rem; }
-
-  /* Compétences */
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem 2rem; margin: 0; }
-  .skills div { min-width: 0; }
-  .skills dt { font-weight: 600; }
-  .skills dd { margin: 0; color: var(--muted); }
-
-  /* Projets */
-  .group { display: grid; gap: 1rem; }
-  .projects { display: grid; gap: 0; }
-  article {
-    display: grid;
-    grid-template-columns: 11rem 1fr;
-    gap: 0.4rem 1.6rem;
-    padding-block: 1.2rem;
-    border-top: 1px solid var(--line);
-  }
-  article:first-child { border-top: 0; padding-top: 0.2rem; }
-  .meta {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    line-height: 1.5;
-    color: var(--muted);
-  }
-  .meta span { display: block; }
-  .body { display: grid; gap: 0.5rem; min-width: 0; }
-  article h4 { margin: 0; font-size: 1.08rem; font-weight: 600; text-wrap: balance; }
-  article ul { margin: 0; padding-left: 1.1rem; }
-  article li { margin-block: 0.15rem; }
-  .tech { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.2rem 0 0; padding: 0; list-style: none; }
-  .tech li {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    background: var(--chip);
-    padding: 0.1rem 0.5rem;
-    border-radius: 3px;
-  }
-
-  /* Contact */
-  .contact { display: grid; gap: 0.4rem; }
-  .contact p { color: var(--muted); }
-  .contact .addr { font-family: var(--font-mono); font-size: 0.95rem; color: var(--fg); user-select: all; }
-  .content { display: grid; gap: 3rem; }
-  footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 1rem; }
-
-  @media (max-width: 640px) {
-    article { grid-template-columns: 1fr; }
-    .meta span { display: inline; }
-    .meta span + span::before { content: " · "; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -166,7 +32,7 @@
       <p>Je me forme au développement logiciel, aux bases de données, au web et aux réseaux.
         Mes projets universitaires m'ont appris à reprendre du code existant sans le casser,
         à travailler avec des tests unitaires et à livrer dans des délais courts, seul ou en équipe.
-        Curieux, pragmatique et à l'aise en équipe.</p>
+        Curieux et pragmatique, j'aime comprendre comment les choses fonctionnent.</p>
     </section>
 
     <section aria-labelledby="competences">
